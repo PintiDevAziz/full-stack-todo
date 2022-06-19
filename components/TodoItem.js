@@ -1,4 +1,4 @@
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc, deleteDoc } from "firebase/firestore";
 import React, { memo, useEffect } from "react";
 import { BsCheck } from "react-icons/bs";
 import { db } from "../firebase";
@@ -9,8 +9,17 @@ const TodoItem = ({ todo }) => {
       done: !todo.done,
     });
   };
+  const handleRemove = (id) => {
+    const delDocRef = doc(db, localStorage.getItem("userToken"), id);
+    deleteDoc(delDocRef);
+  };
   return (
-    <div className="w-full  justify-between h-12 bg-[#25273C] text-white mx-3 px-2 flex items-center flex-shrink-0 rounded ">
+    <div
+      onDoubleClick={(e) => {
+        handleRemove(todo.id);
+      }}
+      className="w-full  justify-between h-12 bg-[#25273C] text-white mx-3 px-2 flex items-center flex-shrink-0 rounded "
+    >
       <p className={`${todo.done ? " line-through" : null}`}>{todo?.todo}</p>
       <label className="w-6 h-6  relative cursor-pointer ">
         <input

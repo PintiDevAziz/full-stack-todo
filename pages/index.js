@@ -14,9 +14,10 @@ const Index = () => {
     }
   }, []);
   return (
-    <div className="flex bg-[#181824] items-center justify-center flex-col h-screen w-full">
+    <div className="flex bg-[#181824] items-center justify-center flex-col h-screen w-full ">
       <Header />
-      <TodoList  />
+      <TodoList />
+     
     </div>
   );
 };

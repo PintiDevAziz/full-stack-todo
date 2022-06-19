@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import TodoList from "../components/TodoList";
+import Footer from "../components/Footer";
 const Index = () => {
   //! create user token on localstorage
   useEffect(() => {
@@ -17,7 +18,7 @@ const Index = () => {
     <div className="flex bg-[#181824] items-center justify-center flex-col h-screen w-full ">
       <Header />
       <TodoList />
-     
+      <Footer />
     </div>
   );
 };

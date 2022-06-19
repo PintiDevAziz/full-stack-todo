@@ -11,7 +11,7 @@ const Header = () => {
   const handleAddTodo = async () => {
     if (input) {
       setError("");
-
+      setInput("");
       const todoId = Math.random().toString(36).substring(2, 15);
       const docRef = doc(db, localStorage.getItem("userToken"), todoId);
       await setDoc(docRef, {
@@ -25,7 +25,7 @@ const Header = () => {
     }
   };
   return (
-    <div className="flex w-[35rem] h-auto flex-col  mb-10 ">
+    <div className="flex w-[35rem] h-auto flex-col  mb-6 ">
       <AlertBox setError={setError} error={error} />
       <div className="flex items-center justify-between w-full mb-10">
         <h2 className="text-white uppercase text-3xl tracking-[20px]">todo</h2>

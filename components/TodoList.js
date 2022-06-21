@@ -10,8 +10,8 @@ import { db } from "../firebase";
 import TodoItem from "../components/TodoItem";
 import { MainContext } from "../context/MainContext";
 const TodoList = () => {
-  const [loading, setLoading] = useState(true);
-  const { todos, setTodos } = useContext(MainContext);
+  const { todos, setTodos, setFilteredTodos, filteredTodos,loading,setLoading } =
+    useContext(MainContext);
   useEffect(() => {
     if (typeof window !== "undefined" && localStorage.getItem("userToken")) {
       let colRef = collection(db, localStorage.getItem("userToken"));
@@ -28,9 +28,9 @@ const TodoList = () => {
       {loading ? (
         <div className="border-4 border-indigo-500 w-[10rem] h-[10rem] rounded-full animate-spin  border-t-indigo-100"></div>
       ) : todos.length > 0 ? (
-        todos.map((todo, key) => <TodoItem todo={todo} key={key} />)
+        filteredTodos.map((todo, key) => <TodoItem todo={todo} key={key} />)
       ) : (
-        <div className="text-white text-2xl animate-pulse">
+        <div className="text-white dark:text-black text-2xl animate-pulse">
           You don't have any todo ( ' _ ' )
         </div>
       )}

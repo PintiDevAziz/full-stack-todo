@@ -18,7 +18,7 @@ const TodoItem = ({ todo }) => {
       onDoubleClick={(e) => {
         handleRemove(todo.id);
       }}
-      className="w-full  justify-between h-12 bg-[#25273C] text-white mx-3 px-2 flex items-center flex-shrink-0 rounded "
+      className="w-full dark:text-black/80 dark:bg-gray-200  justify-between h-12 bg-[#25273C] text-white mx-3 px-2 flex items-center flex-shrink-0 rounded "
     >
       <p className={`${todo.done ? " line-through" : null}`}>{todo?.todo}</p>
       <label className="w-6 h-6  relative cursor-pointer ">

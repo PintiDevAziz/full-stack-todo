@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 
 const AlertBox = ({ error, setError }) => {
   setTimeout(() => {
@@ -16,4 +16,4 @@ const AlertBox = ({ error, setError }) => {
   );
 };
 
-export default AlertBox;
+export default memo(AlertBox);

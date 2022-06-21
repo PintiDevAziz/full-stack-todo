@@ -39,7 +39,6 @@ const Footer = () => {
       case 2:
         setFilteredTodos(todos.filter((todo) => todo.done === true));
     }
-    console.log(filteredTodos);
   };
   const handleClearComplated = async () => {
     todos.map((todo) => {

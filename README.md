@@ -6,4 +6,4 @@ NextJs
 Firebase
 Tailwindcss
 
-visit from this [link]('https://fullstacktodo.vercel.app/') for live demo
+visit from this [link](https://fullstacktodo.vercel.app/) for live demo

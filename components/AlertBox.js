@@ -3,7 +3,6 @@ import React, { memo, useEffect, useState } from "react";
 const AlertBox = ({ error, setError }) => {
   setTimeout(() => {
     setError("");
-    console.log("still running");
   }, 2000);
   return (
     <div
